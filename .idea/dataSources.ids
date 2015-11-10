@@ -9,12 +9,14 @@
     <table name="CHILD" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
       <column name="ID_CHILD" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="NAME_CHILD" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CH_ID_PARENT" sqlType="INTEGER" precision="32" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="SYS_PK_10120" columns="ID_CHILD"/>
+      <foreign-key name="CHILD_PARENT_ID_PARENT_FK" columns="CH_ID_PARENT" ref-table="PARENT" ref-schema="PUBLIC" ref-catalog="PUBLIC" ref-columns="ID_PARENT" update-rule="3" delete-rule="3"/>
     </table>
     <table name="PARENT" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
-      <column name="ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ID_PARENT" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="SYS_PK_10103" columns="ID"/>
+      <primary-key name="SYS_PK_10103" columns="ID_PARENT"/>
     </table>
   </data-source>
 </component>

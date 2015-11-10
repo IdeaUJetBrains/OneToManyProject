@@ -1,10 +1,14 @@
 package data;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.ForeignKey;
+import org.hibernate.cfg.annotations.reflection.XMLContext;
+
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.Collection;
+import java.util.SortedSet;
 
 /**
  * Created by Olga Pavlova on 11/9/2015.
@@ -42,6 +46,25 @@ public class Parent {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    //=====================================
+    @Cascade(CascadeType.ALL)
+    @Sort(type = SortType.NATURAL)
+    @ForeignKey(name = "CHILD_PARENT_ID_PARENT_FK")
+    @BatchSize(size = 255)
+    @OneToMany(mappedBy = "chIdParent")
+    private SortedSet<Child> chIds;
+    public SortedSet<Child> getChIds() {
+        return chIds;
+    }
+    public void setChIds(SortedSet<Child> chIds) {
+        this.chIds = chIds;
+    }
+
+    //=====================================
+
+
 
     @Override
     public boolean equals(Object o) {

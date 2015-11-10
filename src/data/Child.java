@@ -1,9 +1,6 @@
 package data;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Olga Pavlova on 11/9/2015.
@@ -32,6 +29,22 @@ public class Child {
     public void setNameChild(String nameChild) {
         this.nameChild = nameChild;
     }
+
+
+    //=====================================
+    @ManyToOne
+    @JoinColumn(name = "CH_ID_PARENT", referencedColumnName="ID_PARENT", nullable = true)
+    private Parent chIdParent;
+    public Parent getDriversidfk() {
+        return chIdParent;
+    }
+    public void setDriversidfk(Parent chIdParent) {
+        this.chIdParent = chIdParent;
+    }
+
+    //=====================================
+
+
 
     @Override
     public boolean equals(Object o) {
