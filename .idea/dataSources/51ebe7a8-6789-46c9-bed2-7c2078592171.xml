@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="DB">
+  <database-model serializer="dbm" rdbms="HSQLDB" format-version="4.0">
+    <root id="1"/>
+    <database id="2" parent="1" name="PUBLIC">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="INFORMATION_SCHEMA"/>
+    <schema id="4" parent="2" name="PUBLIC">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="5" parent="2" name="SYSTEM_LOBS"/>
+    <table id="6" parent="4" name="CHILD"/>
+    <table id="7" parent="4" name="PARENT"/>
+    <column id="8" parent="6" name="ID_CHILD">
+      <Position>1</Position>
+      <DataType>INTEGER(32)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="9" parent="6" name="NAME_CHILD">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="10" parent="6" name="CH_ID_PARENT">
+      <Position>3</Position>
+      <DataType>INTEGER(32)|4</DataType>
+    </column>
+    <key id="11" parent="6" name="SYS_PK_10096">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID_CHILD</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="12" parent="6" name="CHILD_PARENT_ID_PARENT_FK">
+      <ColNames>CH_ID_PARENT</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>PARENT</RefTableName>
+      <RefKeyName>SYS_PK_10092</RefKeyName>
+      <RefColNames>ID_PARENT</RefColNames>
+      <OnDelete>no-action</OnDelete>
+      <OnUpdate>no-action</OnUpdate>
+    </foreign-key>
+    <column id="13" parent="7" name="ID_PARENT">
+      <Position>1</Position>
+      <DataType>INTEGER(32)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="14" parent="7" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <key id="15" parent="7" name="SYS_PK_10092">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID_PARENT</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

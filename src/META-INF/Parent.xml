@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="a.b.Parent">
+        <table name="PARENT" schema="PUBLIC" catalog="PUBLIC"></table>
+        <attributes>
+            <id name="idParent">
+                <column name="ID_PARENT" precision="32"/>
+            </id>
+            <basic name="name">
+                <column name="NAME" nullable="false"/>
+            </basic>
+            <one-to-many name="childrenByIdParent" mapped-by="parentByChIdParent" target-entity="a.b.Child"/>
+        </attributes>
+    </entity>
+</entity-mappings>

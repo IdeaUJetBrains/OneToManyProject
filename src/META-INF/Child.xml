@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="a.b.Child">
+        <table name="CHILD" schema="PUBLIC" catalog="PUBLIC"/>
+        <attributes>
+            <id name="idChild">
+                <column name="ID_CHILD" precision="32"/>
+            </id>
+            <basic name="nameChild">
+                <column name="NAME_CHILD" nullable="false"/>
+            </basic>
+            <basic name="chIdParent">
+                <column name="CH_ID_PARENT" nullable="false" precision="32" insertable="false" updatable="false" />
+            </basic>
+            <many-to-one name="parentByChIdParent" optional="true" target-entity="a.b.Parent">
+                <join-column name="CH_ID_PARENT" nullable="false" referenced-column-name="ID_PARENT" insertable="false" updatable="false" />
+            </many-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>
