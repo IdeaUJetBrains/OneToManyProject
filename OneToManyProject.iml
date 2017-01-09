@@ -6,9 +6,10 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="NewPersistenceUnit" value="3ad9e683-bfe6-4fe5-a356-0dc68c7bb2b6" />
+          <factory-entry name="NewPersistenceUnit" value="51ebe7a8-6789-46c9-bed2-7c2078592171" />
         </datasource-mapping>
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
+        <deploymentDescriptor name="orm.xml" url="file://$MODULE_DIR$/META-INF/orm.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/out/production/OneToManyProject/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>
@@ -19,7 +20,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4" level="application_server_libraries" />
-    <orderEntry type="library" name="JPA 2.0-2.0" level="project" />
+    <orderEntry type="library" name="javax.persistence" level="project" />
   </component>
 </module>

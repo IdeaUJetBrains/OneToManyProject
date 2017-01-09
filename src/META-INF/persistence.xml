@@ -3,10 +3,14 @@
 
     <persistence-unit name="NewPersistenceUnit">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <mapping-file>data/Child.xml</mapping-file>
-        <mapping-file>data/Parent.xml</mapping-file>
-        <class>data.Child</class>
-        <class>data.Parent</class>
+        <!--<mapping-file>data/Child.xml</mapping-file>-->
+        <!--<mapping-file>data/Parent.xml</mapping-file>-->
+        <!--<class>data.Child</class>
+        <class>data.Parent</class> -->
+        <mapping-file>META-INF/Child.xml</mapping-file>
+        <mapping-file>META-INF/Parent.xml</mapping-file>
+        <class>a.b.Child</class>
+        <class>a.b.Parent</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:hsqldb:file:C:/Users/Olga Pavlova/IdeaProjects/OneToManyProject/DB/DB"/>
             <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbc.JDBCDriver"/>
